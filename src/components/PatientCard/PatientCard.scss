@@ -9,8 +9,9 @@
     padding: 1rem;
   }
   &__img {
-    background-image: url("https://placehold.co/120x180");
+    // background-image: url("https://placehold.co/120x180");
     width: 120px;
-    height: 180px;
+    height: auto;
+    object-fit: cover;
   }
 }

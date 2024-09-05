@@ -1,33 +1,40 @@
 import "./PatientCard.scss";
+import patients from "../../data/patients.json";
 
 export default function PatientCard() {
+  console.log(patients);
+
   return (
     <div className="patientcard__main-container">
       <div className="patientcard__subcontainer-1">
-        <img className="patientcard__img"></img>
+        <img className="patientcard__img" src={patients[0].image}></img>
       </div>
       <div className="patientcard__subcontainer-2">
         <div className="patientcard__name">
           Name:
-          <div className="patientcard__data"></div>
+          <div className="patientcard__data">{patients[0].name}</div>
         </div>
         <div className="patiendcard__age">
-          Age:<div className="patientcard__data"></div>
+          Age:<div className="patientcard__data">{patients[0].age}</div>
         </div>
         <div className="patiendcard__sex">
-          Sex:<div className="patientcard__data"></div>
+          Sex:<div className="patientcard__data">{patients[0].sex}</div>
         </div>
         <div className="patientcard__height">
-          Height:<div className="patientcard__data"></div>
+          Height:<div className="patientcard__data">{patients[0].height}</div>
         </div>
         <div className="patientcard__weight">
-          Weight:<div className="patientcard__data"></div>
+          Weight:<div className="patientcard__data">{patients[0].weight}</div>
         </div>
         <div className="patientcard__record-start-date">
-          Patient since:<div className="patientcard__data"></div>
+          Patient since:
+          <div className="patientcard__data">
+            {patients[0]["record-start-date"]}
+          </div>
         </div>
         <div className="patientcard__current-diagnosis">
-          Diagnosis:<div className="patientcard__data"></div>
+          Diagnosis:
+          <div className="patientcard__data">{patients[0].diagnosis}</div>
         </div>
       </div>
     </div>
