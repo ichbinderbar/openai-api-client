@@ -1,0 +1,50 @@
+[
+  {
+    "id": "8e160e6a-0c03-4a15-8f23-7268aedaa3cc",
+    "name": "Jane Doe",
+    "age": "42",
+    "sex": "female",
+    "height": "165cm",
+    "weight": "75kg",
+    "image": "../../public/images/jane.jpg",
+    "record-start-date": "01/01/2017",
+    "diagnosis": "Stern",
+    "symptoms": ["strict", "disciplined", "successful", "boss lady"]
+  },
+  {
+    "id": "c05b9a93-8682-4ab6-aff2-92ebb4bbfc14",
+    "name": "John Doe",
+    "age": "64",
+    "sex": "male",
+    "height": "175cm",
+    "weight": "120kg",
+    "image": "../../public/images/john.jpg",
+    "record-start-date": "05/05/2010",
+    "diagnosis": "Grumpy",
+    "symptoms": ["mean", "sad", "unsatisfied", "unfulfilled"]
+  },
+  {
+    "id": "8e160e6a-0c03-4a15-8f23-7268aedaa3cc",
+    "name": "Johnny Dome",
+    "age": "5",
+    "sex": "male",
+    "height": "50cm",
+    "weight": "40kg",
+    "image": "../../public/images/johnny.jpg",
+    "record-start-date": "05/05/2020",
+    "diagnosis": "Smily",
+    "symptoms": ["happy", "worry free", "immature"]
+  },
+  {
+    "id": "8e160e6a-0c03-4a15-8f23-7268aedaa3cc",
+    "name": "Janet Dough",
+    "age": "80",
+    "sex": "female",
+    "height": "120cm",
+    "weight": "60kg",
+    "image": "../../public/images/janet.jpg",
+    "record-start-date": "05/05/1982",
+    "diagnosis": "Oldie",
+    "symptoms": ["ready to go", "indifferent", "lovely"]
+  }
+]
