@@ -9,11 +9,12 @@ function App() {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
 
-  const handleInputChange = (event) => {
-    setPrompt(event.target.value);
-  };
+  // const handleInputChange = (event) => {
+  //   setPrompt(event.target.value);
+  // };
 
   const getResponse = async () => {
+    setPrompt("Give me a list of symptoms for Pancreatic Cancer");
     try {
       const result = await axios.post(
         "https://openai-experimental-server-eff701d4fdb7.herokuapp.com/api/get-response",
@@ -31,12 +32,12 @@ function App() {
   return (
     <div>
       <PatientCard></PatientCard>
-      <input
+      {/* <input
         type="text"
         value={prompt}
         onChange={handleInputChange}
         placeholder="Enter your prompt here"
-      />
+      /> */}
       <button onClick={getResponse}>Get Response</button>
       <div>{response}</div>
     </div>
