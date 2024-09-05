@@ -1,54 +1,56 @@
-import Button from "../Button/Button";
 import "./PatientCard.scss";
 
-export default function PatientCard({ patient, getResponse }) {
-  // console.log(patient.diagnosis);
-
+export default function PatientCard({ patient }) {
   if (!patient) {
     return <div>Loading...</div>;
   }
 
   return (
     <article className="patient">
-      <div className="patient__details">
+      <header className="patient__header">
         <div className="patient__image-container">
-          <img className="patient__image" src={patient.image}></img>
+          <img
+            className="patient__image"
+            src={patient.image}
+            alt={`${patient.name}'s profile`}
+          />
         </div>
+      </header>
+      <section className="patient__details">
         <div className="patient__info-container">
-          <label className="patient__info-label">
-            Name:
+          <p className="patient__info-label">
+            <strong>Name:</strong>
             <span className="patient__info-data"> {patient.name}</span>
-          </label>
-          <label className="patient__info-label">
-            Age:
+          </p>
+          <p className="patient__info-label">
+            <strong>Age:</strong>
             <span className="patient__info-data"> {patient.age}</span>
-          </label>
-          <label className="patient__info-label">
-            Sex:
+          </p>
+          <p className="patient__info-label">
+            <strong>Sex:</strong>
             <span className="patient__info-data"> {patient.sex}</span>
-          </label>
-          <label className="patient__info-label">
-            Height:
+          </p>
+          <p className="patient__info-label">
+            <strong>Height:</strong>
             <span className="patient__info-data"> {patient.height}</span>
-          </label>
-          <label className="patient__info-label">
-            Weight:
+          </p>
+          <p className="patient__info-label">
+            <strong>Weight:</strong>
             <span className="patient__info-data"> {patient.weight}</span>
-          </label>
-          <label className="patient__info-label">
-            Patient since:
+          </p>
+          <p className="patient__info-label">
+            <strong>Patient since:</strong>
             <span className="patient__info-data">
               {" "}
               {patient["record-start-date"]}
             </span>
-          </label>
-          <label className="patient__info-label">
-            Diagnosis:
+          </p>
+          <p className="patient__info-label">
+            <strong>Diagnosis:</strong>
             <span className="patient__info-data"> {patient.diagnosis}</span>
-          </label>
+          </p>
         </div>
-      </div>
-      <Button getResponse={getResponse} />
+      </section>
     </article>
   );
 }

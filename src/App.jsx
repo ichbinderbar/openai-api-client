@@ -3,7 +3,6 @@ import axios from "axios";
 import "./App.scss";
 import patients from "./data/patients.json";
 import PatientCard from "./components/PatientCard/PatientCard";
-import Header from "./components/Header/Header";
 import SearchBar from "./components/SearchBar/SearchBar";
 import SymptomList from "./components/SymptomList/SymptomList";
 
@@ -18,15 +17,15 @@ function App() {
   const patient = patients[currentPatientId];
 
   useEffect(() => {
-    const array = response.split(",");
-    console.log("Converted string to array:", array);
-    setSymtoms(array);
+    if (response) {
+      const array = response.split(",").filter((item) => item.trim() !== "");
+      if (array.length > 0) {
+        setSymtoms(array);
+      } else {
+        console.error("No valid symptoms received");
+      }
+    }
   }, [response]);
-
-  const handleSymtomsList = () => {
-    setSymtoms(array);
-    console.log("got in here");
-  };
 
   useEffect(() => {
     setPrompt(
@@ -47,7 +46,6 @@ function App() {
         error.response ? error.response.data : error.message
       );
     }
-    // setResponse("blah, blah, blah");
   };
 
   const handleInputChange = (event) => {
@@ -65,14 +63,12 @@ function App() {
 
   return (
     <div>
-      <Header />
       <div className="search-container">
         <SearchBar handleInputChange={handleInputChange} />
       </div>
-      <PatientCard patient={patient} getResponse={getResponse}></PatientCard>
-      {/* <button onClick={getResponse}>Get list of symptoms</button> */}
-      <SymptomList symptoms={symptoms} handleSymtomsList={handleSymtomsList} />
-      {/* <button onClick={handleSymtomsList}>Get related illnesses</button> */}
+      <PatientCard patient={patient}></PatientCard>
+      <button onClick={getResponse}>Get list of symptoms</button>
+      <SymptomList symptoms={symptoms} />
     </div>
   );
 }

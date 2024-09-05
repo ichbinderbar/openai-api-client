@@ -1,8 +1,5 @@
-@use "./styles/partials/resets";
-@use "./styles/partials/globals" as *;
-
-.search-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

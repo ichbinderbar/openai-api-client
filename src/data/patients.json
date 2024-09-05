@@ -1,13 +1,13 @@
 [
   {
-    "id": "0",
-    "name": "Patient's name",
+    "id": 0,
+    "name": null,
     "age": null,
     "sex": null,
     "height": null,
     "weight": null,
     "image": "https://placehold.co/120x180",
-    "record-start-date": "dd/mm/yyyy",
+    "record-start-date": null,
     "diagnosis": null
   },
   {
@@ -17,7 +17,7 @@
     "sex": "Female",
     "height": "165cm",
     "weight": "75kg",
-    "image": "../../public/images/jane.jpg",
+    "image": "https://placehold.co/120x180",
     "record-start-date": "01/01/2017",
     "diagnosis": "Pancreatic Cancer"
   },
@@ -28,7 +28,7 @@
     "sex": "Male",
     "height": "175cm",
     "weight": "120kg",
-    "image": "../../public/images/john.jpg",
+    "image": "https://placehold.co/120x180",
     "record-start-date": "05/05/2010",
     "diagnosis": "Lyme Disease"
   },
@@ -39,7 +39,7 @@
     "sex": "Male",
     "height": "50cm",
     "weight": "40kg",
-    "image": "../../public/images/johnny.jpg",
+    "image": "https://placehold.co/120x180",
     "record-start-date": "05/05/2020",
     "diagnosis": "Asthma"
   },
@@ -47,10 +47,10 @@
     "id": "4",
     "name": "Janet Dough",
     "age": "80",
-    "sex": "Male",
+    "sex": "Female",
     "height": "120cm",
     "weight": "60kg",
-    "image": "../../public/images/janet.jpg",
+    "image": "https://placehold.co/120x180",
     "record-start-date": "05/05/1982",
     "diagnosis": "Tuberculosis"
   }
