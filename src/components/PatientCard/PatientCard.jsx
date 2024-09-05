@@ -5,38 +5,46 @@ export default function PatientCard() {
   console.log(patients);
 
   return (
-    <div className="patientcard__main-container">
-      <div className="patientcard__subcontainer-1">
-        <img className="patientcard__img" src={patients[0].image}></img>
+    <article className="patient">
+      <div className="patient__details">
+        <div className="patient__image-container">
+          <img className="patient__image" src={patients[0].image}></img>
+        </div>
+        <div className="patient__info-container">
+          <label className="patient__info-label">
+            Name:
+            <span className="patient__info-data"> {patients[0].name}</span>
+          </label>
+          <label className="patient__info-label">
+            Age:
+            <span className="patient__info-data"> {patients[0].age}</span>
+          </label>
+          <label className="patient__info-label">
+            Sex:
+            <span className="patient__info-data"> {patients[0].sex}</span>
+          </label>
+          <label className="patient__info-label">
+            Height:
+            <span className="patient__info-data"> {patients[0].height}</span>
+          </label>
+          <label className="patient__info-label">
+            Weight:
+            <span className="patient__info-data"> {patients[0].weight}</span>
+          </label>
+          <label className="patient__info-label">
+            Patient since:
+            <span className="patient__info-data">
+              {" "}
+              {patients[0]["record-start-date"]}
+            </span>
+          </label>
+          <label className="patient__info-label">
+            Diagnosis:
+            <span className="patient__info-data"> {patients[0].diagnosis}</span>
+          </label>
+        </div>
       </div>
-      <div className="patientcard__subcontainer-2">
-        <div className="patientcard__name">
-          Name:
-          <div className="patientcard__data">{patients[0].name}</div>
-        </div>
-        <div className="patiendcard__age">
-          Age:<div className="patientcard__data">{patients[0].age}</div>
-        </div>
-        <div className="patiendcard__sex">
-          Sex:<div className="patientcard__data">{patients[0].sex}</div>
-        </div>
-        <div className="patientcard__height">
-          Height:<div className="patientcard__data">{patients[0].height}</div>
-        </div>
-        <div className="patientcard__weight">
-          Weight:<div className="patientcard__data">{patients[0].weight}</div>
-        </div>
-        <div className="patientcard__record-start-date">
-          Patient since:
-          <div className="patientcard__data">
-            {patients[0]["record-start-date"]}
-          </div>
-        </div>
-        <div className="patientcard__current-diagnosis">
-          Diagnosis:
-          <div className="patientcard__data">{patients[0].diagnosis}</div>
-        </div>
-      </div>
-    </div>
+      <button className="patient__cta">Get Patient Symptoms</button>
+    </article>
   );
 }
