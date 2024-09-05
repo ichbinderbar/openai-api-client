@@ -10,8 +10,14 @@ function App() {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [currentPatientId, setCurrentPatientId] = useState(0);
+  const [symptoms, setSymtoms] = useState([]);
 
   const patient = patients[currentPatientId];
+
+  const handleSymtomsList = () => {
+    setSymtoms(response.split(","));
+    console.log(symptoms);
+  };
 
   useEffect(() => {
     setPrompt(
@@ -57,6 +63,7 @@ function App() {
       <PatientCard patient={patient}></PatientCard>
       <button onClick={getResponse}>Get list of symptoms</button>
       <div>{response}</div>
+      <button onClick={handleSymtomsList}>Get related illnesses</button>
     </div>
   );
 }
