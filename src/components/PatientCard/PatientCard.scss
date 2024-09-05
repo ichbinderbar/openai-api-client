@@ -12,23 +12,10 @@
   &__details {
     display: flex;
   }
-<<<<<<< HEAD
 
   &__image {
     width: 200px;
     height: 300px;
-=======
-  &__subcontainer-1 {
-    padding: 1rem;
-  }
-  &__subcontainer-2 {
-    padding: 1rem;
-  }
-  &__img {
-    background-image: url("https://placehold.co/180x120");
-    width: 120px;
-    height: auto;
->>>>>>> develop
     object-fit: cover;
     border-radius: 20px;
 
