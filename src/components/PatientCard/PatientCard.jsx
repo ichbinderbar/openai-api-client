@@ -1,40 +1,38 @@
 import "./PatientCard.scss";
-import patients from "../../data/patients.json";
 
-export default function PatientCard() {
-  console.log(patients);
-
+export default function PatientCard({ patient }) {
+  console.log(patient.diagnosis);
   return (
     <div className="patientcard__main-container">
       <div className="patientcard__subcontainer-1">
-        <img className="patientcard__img" src={patients[0].image}></img>
+        <img className="patientcard__img" src={patient.image}></img>
       </div>
       <div className="patientcard__subcontainer-2">
         <div className="patientcard__name">
           Name:
-          <div className="patientcard__data">{patients[0].name}</div>
+          <div className="patientcard__data">{patient.name}</div>
         </div>
         <div className="patiendcard__age">
-          Age:<div className="patientcard__data">{patients[0].age}</div>
+          Age:<div className="patientcard__data">{patient.age}</div>
         </div>
         <div className="patiendcard__sex">
-          Sex:<div className="patientcard__data">{patients[0].sex}</div>
+          Sex:<div className="patientcard__data">{patient.sex}</div>
         </div>
         <div className="patientcard__height">
-          Height:<div className="patientcard__data">{patients[0].height}</div>
+          Height:<div className="patientcard__data">{patient.height}</div>
         </div>
         <div className="patientcard__weight">
-          Weight:<div className="patientcard__data">{patients[0].weight}</div>
+          Weight:<div className="patientcard__data">{patient.weight}</div>
         </div>
         <div className="patientcard__record-start-date">
           Patient since:
           <div className="patientcard__data">
-            {patients[0]["record-start-date"]}
+            {patient["record-start-date"]}
           </div>
         </div>
         <div className="patientcard__current-diagnosis">
           Diagnosis:
-          <div className="patientcard__data">{patients[0].diagnosis}</div>
+          <div className="patientcard__data">{patient.diagnosis}</div>
         </div>
       </div>
     </div>

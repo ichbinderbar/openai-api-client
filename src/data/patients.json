@@ -20,7 +20,7 @@
     "weight": "120kg",
     "image": "../../public/images/john.jpg",
     "record-start-date": "05/05/2010",
-    "diagnosis": "Grumpy",
+    "diagnosis": "Lyme Disease",
     "symptoms": ["mean", "sad", "unsatisfied", "unfulfilled"]
   },
   {
@@ -32,7 +32,7 @@
     "weight": "40kg",
     "image": "../../public/images/johnny.jpg",
     "record-start-date": "05/05/2020",
-    "diagnosis": "Smily",
+    "diagnosis": "Asthma",
     "symptoms": ["happy", "worry free", "immature"]
   },
   {
@@ -44,7 +44,7 @@
     "weight": "60kg",
     "image": "../../public/images/janet.jpg",
     "record-start-date": "05/05/1982",
-    "diagnosis": "Oldie",
+    "diagnosis": "Tuberculosis",
     "symptoms": ["ready to go", "indifferent", "lovely"]
   }
 ]
