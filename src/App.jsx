@@ -5,6 +5,7 @@ import patients from "./data/patients.json";
 import PatientCard from "./components/PatientCard/PatientCard";
 import Header from "./components/Header/Header";
 import SearchBar from "./components/SearchBar/SearchBar";
+import SymptomList from "./components/SymptomList/SymptomList";
 
 const apiUrl = "https://openai-experimental-server-eff701d4fdb7.herokuapp.com/";
 
@@ -58,14 +59,14 @@ function App() {
   return (
     <div>
       <Header />
-      <PatientCard></PatientCard>
       <div className="search-container">
         <SearchBar handleInputChange={handleInputChange} />
       </div>
       <PatientCard patient={patient} getResponse={getResponse}></PatientCard>
       {/* <button onClick={getResponse}>Get list of symptoms</button> */}
+      <SymptomList symptoms={response} handleSymtomsList={handleSymtomsList} />
       <div>{response}</div>
-      <button onClick={handleSymtomsList}>Get related illnesses</button>
+      {/* <button onClick={handleSymtomsList}>Get related illnesses</button> */}
     </div>
   );
 }

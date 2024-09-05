@@ -1,0 +1,31 @@
+.symptoms {
+  padding: 1rem 5rem;
+
+  &__symptom {
+    width: 100%;
+    // background-color: red;
+    height: 50px;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 1rem;
+
+    &__checkbox {
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__cta {
+    width: 400px;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #399986;
+    color: white;
+  }
+}
