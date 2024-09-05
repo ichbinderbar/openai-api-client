@@ -12,12 +12,18 @@ function App() {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [currentPatientId, setCurrentPatientId] = useState(0);
+  const [symptoms, setSymtoms] = useState([]);
 
   const patient = patients[currentPatientId];
 
+  const handleSymtomsList = () => {
+    setSymtoms(response.split(","));
+    console.log(symptoms);
+  };
+
   useEffect(() => {
     setPrompt(
-      `Give me a list of symptoms for ${patient.diagnosis} as a list separated by commas. Do not say anything else.`
+      `Give me a list of symptoms for ${patient.diagnosis} as a list separated by commas. Do not capitalize anything. Do not say anything else.`
     );
   }, [currentPatientId]);
 
@@ -37,11 +43,16 @@ function App() {
   };
 
   const handleInputChange = (event) => {
-    console.log(event.target.value);
-    if (event.target.value === "") {
-      setCurrentPatientId = 0;
+    const idNum = event.target.value;
+    const patientFound = patients.find((patient) => patient.id === idNum);
+    if (idNum === "") {
+      return;
     }
-    setCurrentPatientId(event.target.value);
+    if (patientFound) {
+      setCurrentPatientId(idNum);
+    } else {
+      console.log("ID does not match any patient.");
+    }
   };
 
   return (
@@ -54,6 +65,7 @@ function App() {
       <PatientCard patient={patient} getResponse={getResponse}></PatientCard>
       {/* <button onClick={getResponse}>Get list of symptoms</button> */}
       <div>{response}</div>
+      <button onClick={handleSymtomsList}>Get related illnesses</button>
     </div>
   );
 }
