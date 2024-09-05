@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     setPrompt(
-      `Give me a list of symptoms for ${patient.diagnosis} as a list separated by commas. Do not say anything else.`
+      `Give me a list of symptoms for ${patient.diagnosis} as a list separated by commas. Do not capitalize anything. Do not say anything else.`
     );
   }, [currentPatientId]);
 
@@ -35,11 +35,16 @@ function App() {
   };
 
   const handleInputChange = (event) => {
-    console.log(event.target.value);
-    if (event.target.value === "") {
-      setCurrentPatientId = 0;
+    const idNum = event.target.value;
+    const patientFound = patients.find((patient) => patient.id === idNum);
+    if (idNum === "") {
+      return;
     }
-    setCurrentPatientId(event.target.value);
+    if (patientFound) {
+      setCurrentPatientId(idNum);
+    } else {
+      console.log("ID does not match any patient.");
+    }
   };
 
   return (

@@ -1,6 +1,17 @@
 [
   {
-    "id": "8e160e6a-0c03-4a15-8f23-7268aedaa3cc",
+    "id": "0",
+    "name": "Patient's name",
+    "age": null,
+    "sex": null,
+    "height": null,
+    "weight": null,
+    "image": "https://placehold.co/120x180",
+    "record-start-date": "dd/mm/yyyy",
+    "diagnosis": null
+  },
+  {
+    "id": "1",
     "name": "Jane Doe",
     "age": "42",
     "sex": "female",
@@ -8,11 +19,10 @@
     "weight": "75kg",
     "image": "../../public/images/jane.jpg",
     "record-start-date": "01/01/2017",
-    "diagnosis": "Pancreatic Cancer",
-    "symptoms": ["strict", "disciplined", "successful", "boss lady"]
+    "diagnosis": "Pancreatic Cancer"
   },
   {
-    "id": "c05b9a93-8682-4ab6-aff2-92ebb4bbfc14",
+    "id": "2",
     "name": "John Doe",
     "age": "64",
     "sex": "male",
@@ -20,11 +30,10 @@
     "weight": "120kg",
     "image": "../../public/images/john.jpg",
     "record-start-date": "05/05/2010",
-    "diagnosis": "Lyme Disease",
-    "symptoms": ["mean", "sad", "unsatisfied", "unfulfilled"]
+    "diagnosis": "Lyme Disease"
   },
   {
-    "id": "8e160e6a-0c03-4a15-8f23-7268aedaa3cc",
+    "id": "3",
     "name": "Johnny Dome",
     "age": "5",
     "sex": "male",
@@ -32,11 +41,10 @@
     "weight": "40kg",
     "image": "../../public/images/johnny.jpg",
     "record-start-date": "05/05/2020",
-    "diagnosis": "Asthma",
-    "symptoms": ["happy", "worry free", "immature"]
+    "diagnosis": "Asthma"
   },
   {
-    "id": "8e160e6a-0c03-4a15-8f23-7268aedaa3cc",
+    "id": "4",
     "name": "Janet Dough",
     "age": "80",
     "sex": "female",
@@ -44,7 +52,6 @@
     "weight": "60kg",
     "image": "../../public/images/janet.jpg",
     "record-start-date": "05/05/1982",
-    "diagnosis": "Tuberculosis",
-    "symptoms": ["ready to go", "indifferent", "lovely"]
+    "diagnosis": "Tuberculosis"
   }
 ]
