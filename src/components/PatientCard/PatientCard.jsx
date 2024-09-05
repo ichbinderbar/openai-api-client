@@ -1,6 +1,7 @@
+import Button from "../Button/Button";
 import "./PatientCard.scss";
 
-export default function PatientCard({ patient }) {
+export default function PatientCard({ patient, getResponse }) {
   // console.log(patient.diagnosis);
 
   if (!patient) {
@@ -8,38 +9,46 @@ export default function PatientCard({ patient }) {
   }
 
   return (
-    <div className="patientcard__main-container">
-      <div className="patientcard__subcontainer-1">
-        <img className="patientcard__img" src={patient.image}></img>
+    <article className="patient">
+      <div className="patient__details">
+        <div className="patient__image-container">
+          <img className="patient__image" src={patient.image}></img>
+        </div>
+        <div className="patient__info-container">
+          <label className="patient__info-label">
+            Name:
+            <span className="patient__info-data"> {patient.name}</span>
+          </label>
+          <label className="patient__info-label">
+            Age:
+            <span className="patient__info-data"> {patient.age}</span>
+          </label>
+          <label className="patient__info-label">
+            Sex:
+            <span className="patient__info-data"> {patient.sex}</span>
+          </label>
+          <label className="patient__info-label">
+            Height:
+            <span className="patient__info-data"> {patient.height}</span>
+          </label>
+          <label className="patient__info-label">
+            Weight:
+            <span className="patient__info-data"> {patient.weight}</span>
+          </label>
+          <label className="patient__info-label">
+            Patient since:
+            <span className="patient__info-data">
+              {" "}
+              {patient["record-start-date"]}
+            </span>
+          </label>
+          <label className="patient__info-label">
+            Diagnosis:
+            <span className="patient__info-data"> {patient.diagnosis}</span>
+          </label>
+        </div>
       </div>
-      <div className="patientcard__subcontainer-2">
-        <div className="patientcard__name">
-          Name:
-          <div className="patientcard__data">{patient.name}</div>
-        </div>
-        <div className="patiendcard__age">
-          Age:<div className="patientcard__data">{patient.age}</div>
-        </div>
-        <div className="patiendcard__sex">
-          Sex:<div className="patientcard__data">{patient.sex}</div>
-        </div>
-        <div className="patientcard__height">
-          Height:<div className="patientcard__data">{patient.height}</div>
-        </div>
-        <div className="patientcard__weight">
-          Weight:<div className="patientcard__data">{patient.weight}</div>
-        </div>
-        <div className="patientcard__record-start-date">
-          Patient since:
-          <div className="patientcard__data">
-            {patient["record-start-date"]}
-          </div>
-        </div>
-        <div className="patientcard__current-diagnosis">
-          Diagnosis:
-          <div className="patientcard__data">{patient.diagnosis}</div>
-        </div>
-      </div>
-    </div>
+      <Button getResponse={getResponse} />
+    </article>
   );
 }

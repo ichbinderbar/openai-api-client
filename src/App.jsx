@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.scss";
-import PatientCard from "./components/PatientCard/PatientCard";
 import patients from "./data/patients.json";
+import PatientCard from "./components/PatientCard/PatientCard";
+import Header from "./components/Header/Header";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 const apiUrl = "https://openai-experimental-server-eff701d4fdb7.herokuapp.com/";
 
@@ -55,13 +57,13 @@ function App() {
 
   return (
     <div>
-      <input
-        type="text"
-        onChange={handleInputChange}
-        placeholder="Enter patient ID"
-      />
-      <PatientCard patient={patient}></PatientCard>
-      <button onClick={getResponse}>Get list of symptoms</button>
+      <Header />
+      <PatientCard></PatientCard>
+      <div className="search-container">
+        <SearchBar handleInputChange={handleInputChange} />
+      </div>
+      <PatientCard patient={patient} getResponse={getResponse}></PatientCard>
+      {/* <button onClick={getResponse}>Get list of symptoms</button> */}
       <div>{response}</div>
       <button onClick={handleSymtomsList}>Get related illnesses</button>
     </div>
