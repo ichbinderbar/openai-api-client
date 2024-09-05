@@ -53,5 +53,60 @@
     "image": "https://placehold.co/120x180",
     "record-start-date": "05/05/1982",
     "diagnosis": "Tuberculosis"
+  },
+  {
+    "id": "5",
+    "name": "Alice Cooper",
+    "age": "30",
+    "sex": "Female",
+    "height": "160cm",
+    "weight": "55kg",
+    "image": "https://placehold.co/120x180",
+    "record-start-date": "12/12/2021",
+    "diagnosis": "Diabetes"
+  },
+  {
+    "id": "6",
+    "name": "Robert Smith",
+    "age": "45",
+    "sex": "Male",
+    "height": "180cm",
+    "weight": "85kg",
+    "image": "https://placehold.co/120x180",
+    "record-start-date": "08/15/2018",
+    "diagnosis": "Hypertension"
+  },
+  {
+    "id": "7",
+    "name": "Maria Garcia",
+    "age": "58",
+    "sex": "Female",
+    "height": "155cm",
+    "weight": "70kg",
+    "image": "https://placehold.co/120x180",
+    "record-start-date": "03/10/2015",
+    "diagnosis": "Chronic Kidney Disease"
+  },
+  {
+    "id": "8",
+    "name": "Michael Johnson",
+    "age": "72",
+    "sex": "Male",
+    "height": "170cm",
+    "weight": "78kg",
+    "image": "https://placehold.co/120x180",
+    "record-start-date": "06/25/2009",
+    "diagnosis": "Alzheimer's Disease"
+  },
+  {
+    "id": "9",
+    "name": "Emily Clark",
+    "age": "25",
+    "sex": "Female",
+    "height": "167cm",
+    "weight": "60kg",
+    "image": "https://placehold.co/120x180",
+    "record-start-date": "04/18/2023",
+    "diagnosis": "Migraine"
   }
 ]
