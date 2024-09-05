@@ -15,7 +15,7 @@
 
   &__image {
     width: 200px;
-    height: auto;
+    height: 300px;
     object-fit: cover;
     border-radius: 20px;
 
@@ -39,16 +39,5 @@
     &-data {
       font-weight: 600;
     }
-  }
-
-  &__cta {
-    width: 400px;
-    padding: 1rem;
-    border-radius: 10px;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    background-color: #399986;
-    color: white;
   }
 }

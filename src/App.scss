@@ -1,2 +1,8 @@
 @use "./styles/partials/resets";
 @use "./styles/partials/globals" as *;
+
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

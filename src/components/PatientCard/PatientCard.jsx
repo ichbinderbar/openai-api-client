@@ -1,50 +1,54 @@
+import Button from "../Button/Button";
 import "./PatientCard.scss";
-import patients from "../../data/patients.json";
 
-export default function PatientCard() {
-  console.log(patients);
+export default function PatientCard({ patient, getResponse }) {
+  // console.log(patient.diagnosis);
+
+  if (!patient) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <article className="patient">
       <div className="patient__details">
         <div className="patient__image-container">
-          <img className="patient__image" src={patients[0].image}></img>
+          <img className="patient__image" src={patient.image}></img>
         </div>
         <div className="patient__info-container">
           <label className="patient__info-label">
             Name:
-            <span className="patient__info-data"> {patients[0].name}</span>
+            <span className="patient__info-data"> {patient.name}</span>
           </label>
           <label className="patient__info-label">
             Age:
-            <span className="patient__info-data"> {patients[0].age}</span>
+            <span className="patient__info-data"> {patient.age}</span>
           </label>
           <label className="patient__info-label">
             Sex:
-            <span className="patient__info-data"> {patients[0].sex}</span>
+            <span className="patient__info-data"> {patient.sex}</span>
           </label>
           <label className="patient__info-label">
             Height:
-            <span className="patient__info-data"> {patients[0].height}</span>
+            <span className="patient__info-data"> {patient.height}</span>
           </label>
           <label className="patient__info-label">
             Weight:
-            <span className="patient__info-data"> {patients[0].weight}</span>
+            <span className="patient__info-data"> {patient.weight}</span>
           </label>
           <label className="patient__info-label">
             Patient since:
             <span className="patient__info-data">
               {" "}
-              {patients[0]["record-start-date"]}
+              {patient["record-start-date"]}
             </span>
           </label>
           <label className="patient__info-label">
             Diagnosis:
-            <span className="patient__info-data"> {patients[0].diagnosis}</span>
+            <span className="patient__info-data"> {patient.diagnosis}</span>
           </label>
         </div>
       </div>
-      <button className="patient__cta">Get Patient Symptoms</button>
+      <Button getResponse={getResponse} />
     </article>
   );
 }

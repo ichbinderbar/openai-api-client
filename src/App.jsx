@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.scss";
 import patients from "./data/patients.json";
 import PatientCard from "./components/PatientCard/PatientCard";
 import Header from "./components/Header/Header";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 const apiUrl = "https://openai-experimental-server-eff701d4fdb7.herokuapp.com/";
 
 function App() {
-  // const [prompt, setPrompt] = useState("");
+  const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
+  const [currentPatientId, setCurrentPatientId] = useState(0);
 
-  const prompt = `Give me a list of symptoms for `;
+  const patient = patients[currentPatientId];
+
+  useEffect(() => {
+    setPrompt(
+      `Give me a list of symptoms for ${patient.diagnosis} as a list separated by commas. Do not say anything else.`
+    );
+  }, [currentPatientId]);
 
   const getResponse = async () => {
-    setPrompt("Give me a list of symptoms for Pancreatic Cancer");
     try {
       const result = await axios.post(
         "https://openai-experimental-server-eff701d4fdb7.herokuapp.com/api/get-response",
@@ -29,17 +36,23 @@ function App() {
     }
   };
 
+  const handleInputChange = (event) => {
+    console.log(event.target.value);
+    if (event.target.value === "") {
+      setCurrentPatientId = 0;
+    }
+    setCurrentPatientId(event.target.value);
+  };
+
   return (
     <div>
       <Header />
       <PatientCard></PatientCard>
-      {/* <input
-        type="text"
-        value={prompt}
-        onChange={handleInputChange}
-        placeholder="Enter your prompt here"
-      /> */}
-      <button onClick={getResponse}>Get Response</button>
+      <div className="search-container">
+        <SearchBar handleInputChange={handleInputChange} />
+      </div>
+      <PatientCard patient={patient} getResponse={getResponse}></PatientCard>
+      {/* <button onClick={getResponse}>Get list of symptoms</button> */}
       <div>{response}</div>
     </div>
   );
