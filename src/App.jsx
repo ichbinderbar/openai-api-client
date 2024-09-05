@@ -9,12 +9,15 @@ const apiUrl = "https://openai-experimental-server-eff701d4fdb7.herokuapp.com/";
 function App() {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
+  const [currentPatientId, setCurrentPatientId] = useState(0);
 
-  const patient = patients[2];
+  const patient = patients[currentPatientId];
 
   useEffect(() => {
-    setPrompt(`Give me a list of symptoms for ${patient.diagnosis}`);
-  }, []);
+    setPrompt(
+      `Give me a list of symptoms for ${patient.diagnosis} as a list separated by commas. Do not say anything else.`
+    );
+  }, [currentPatientId]);
 
   const getResponse = async () => {
     try {
@@ -31,15 +34,22 @@ function App() {
     }
   };
 
+  const handleInputChange = (event) => {
+    console.log(event.target.value);
+    if (event.target.value === "") {
+      setCurrentPatientId = 0;
+    }
+    setCurrentPatientId(event.target.value);
+  };
+
   return (
     <div>
-      <PatientCard patient={patient}></PatientCard>
-      {/* <input
+      <input
         type="text"
-        value={prompt}
         onChange={handleInputChange}
-        placeholder="Enter your prompt here"
-      /> */}
+        placeholder="Enter patient ID"
+      />
+      <PatientCard patient={patient}></PatientCard>
       <button onClick={getResponse}>Get list of symptoms</button>
       <div>{response}</div>
     </div>

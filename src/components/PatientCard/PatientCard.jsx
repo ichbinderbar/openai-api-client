@@ -1,7 +1,12 @@
 import "./PatientCard.scss";
 
 export default function PatientCard({ patient }) {
-  console.log(patient.diagnosis);
+  // console.log(patient.diagnosis);
+
+  if (!patient) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="patientcard__main-container">
       <div className="patientcard__subcontainer-1">
