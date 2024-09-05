@@ -17,9 +17,15 @@ function App() {
 
   const patient = patients[currentPatientId];
 
+  useEffect(() => {
+    const array = response.split(",");
+    console.log("Converted string to array:", array);
+    setSymtoms(array);
+  }, [response]);
+
   const handleSymtomsList = () => {
-    setSymtoms(response.split(","));
-    console.log(symptoms);
+    setSymtoms(array);
+    console.log("got in here");
   };
 
   useEffect(() => {
@@ -41,6 +47,7 @@ function App() {
         error.response ? error.response.data : error.message
       );
     }
+    // setResponse("blah, blah, blah");
   };
 
   const handleInputChange = (event) => {
@@ -64,8 +71,7 @@ function App() {
       </div>
       <PatientCard patient={patient} getResponse={getResponse}></PatientCard>
       {/* <button onClick={getResponse}>Get list of symptoms</button> */}
-      <SymptomList symptoms={response} handleSymtomsList={handleSymtomsList} />
-      <div>{response}</div>
+      <SymptomList symptoms={symptoms} handleSymtomsList={handleSymtomsList} />
       {/* <button onClick={handleSymtomsList}>Get related illnesses</button> */}
     </div>
   );
