@@ -1,7 +1,2 @@
-// globals and resets
-
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@use "./styles/partials/resets";
+@use "./styles/partials/globals" as *;

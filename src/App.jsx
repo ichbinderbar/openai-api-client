@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.scss";
+import patients from "./data/patients.json";
 import PatientCard from "./components/PatientCard/PatientCard";
+import Header from "./components/Header/Header";
 
 const apiUrl = "https://openai-experimental-server-eff701d4fdb7.herokuapp.com/";
 
 function App() {
-  const [prompt, setPrompt] = useState("");
+  // const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
 
-  // const handleInputChange = (event) => {
-  //   setPrompt(event.target.value);
-  // };
+  const prompt = `Give me a list of symptoms for `;
 
   const getResponse = async () => {
     setPrompt("Give me a list of symptoms for Pancreatic Cancer");
@@ -31,6 +31,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <PatientCard></PatientCard>
       {/* <input
         type="text"
