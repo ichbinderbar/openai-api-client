@@ -1,0 +1,16 @@
+.patientcard {
+  &__main-container {
+    display: flex;
+  }
+  &__subcontainer-1 {
+    padding: 1rem;
+  }
+  &__subcontainer-2 {
+    padding: 1rem;
+  }
+  &__img {
+    background-image: url("https://placehold.co/120x180");
+    width: 120px;
+    height: 180px;
+  }
+}

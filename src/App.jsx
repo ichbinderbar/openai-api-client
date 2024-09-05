@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.scss";
+import PatientCard from "./components/PatientCard/PatientCard";
 
 const apiUrl = "https://openai-experimental-server-eff701d4fdb7.herokuapp.com/";
 
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <div>
+      <PatientCard></PatientCard>
       <input
         type="text"
         value={prompt}
